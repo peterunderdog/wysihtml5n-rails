@@ -634,6 +634,8 @@
         italic:       'icon-italic',
         ol:           'icon-list-ol',
         ul:           'icon-list-ul',
+        superscript:  'icon-superscript',
+        subscript:    'icon-subscript',
         insertLink:   'icon-link',
         insertImage:  'icon-picture',
       },
@@ -642,6 +644,8 @@
         italic:       'fa fa-italic',
         ol:           'fa fa-list-ol',
         ul:           'fa fa-list-ul',
+        superscript:  'fa fa-superscript',
+        subscript:    'fa fa-subscript',
         insertLink:   'fa fa-link',
         insertImage:  'fa fa-image',
       }
@@ -659,6 +663,8 @@
       italic:       '<li data-wysihtml5-command="italic" title="Make text italic (CTRL + I)" class="command btn"><i class="' + toolbar_icon['italic'] + '"></i></li>',
       ol:           '<li data-wysihtml5-command="insertOrderedList" title="Insert an ordered list" class="command btn"><i class="' + toolbar_icon['ol'] + '"></i></li>',
       ul:           '<li data-wysihtml5-command="insertUnorderedList" title="Insert an unordered list" class="command btn"><i class="' + toolbar_icon['ul'] + '"></i></li>',
+      superscript:  '<li data-wysihtml5-command="superscript" title="Insert superscript or exponent" class="command btn"><i class="' + toolbar_icon['superscript'] + '"></i></li>',
+      subscript:    '<li data-wysihtml5-command="subscript" title="Insert subscript" class="command btn"><i class="' + toolbar_icon['subscript'] + '"></i></li>',
       insertLink:   '<li data-wysihtml5-command="createLink" title="Insert a link" class="command btn"><i class="' + toolbar_icon['insertLink'] + '"></i></li>',
       insertImage:  '<li data-wysihtml5-command="insertImage" title="Insert an image" class="command btn"><i class="' + toolbar_icon['insertImage'] + '"></i></li>',
       changeView:   '<li data-wysihtml5-action="change_view" title="Show HTML" class="action btn">&lt;/&gt;</li>',
@@ -791,7 +797,7 @@
 
   $.fn.wysiHTML5N.defaults = {
     toolbar: [
-      'h1', 'h2', 'h3', 'p', 'bold', 'italic', 'ul', 'ol', 'insertLink', 'insertImage', 'changeView'
+      'h1', 'h2', 'h3', 'p', 'bold', 'italic', 'ul', 'ol', 'superscript', 'subscript', 'insertLink', 'insertImage', 'changeView'
     ],
     icon_style: 'font_awesome_3',
     stylesheets: [],

@@ -7636,6 +7636,38 @@ wysihtml5.Commands = Base.extend(
     }
   };
 })(wysihtml5);(function(wysihtml5) {
+  var undef;
+  
+  wysihtml5.commands.superscript = {
+    exec: function(composer, command) {
+      return wysihtml5.commands.formatInline.exec(composer, command, "sup");
+    },
+
+    state: function(composer, command, color) {
+      return wysihtml5.commands.formatInline.state(composer, command, "sup");
+    },
+
+    value: function() {
+      return undef;
+    }
+  };
+})(wysihtml5);(function(wysihtml5) {
+  var undef;
+  
+  wysihtml5.commands.subscript = {
+    exec: function(composer, command) {
+      return wysihtml5.commands.formatInline.exec(composer, command, "sub");
+    },
+
+    state: function(composer, command, color) {
+      return wysihtml5.commands.formatInline.state(composer, command, "sub");
+    },
+
+    value: function() {
+      return undef;
+    }
+  };
+})(wysihtml5);(function(wysihtml5) {
   var undef,
       CLASS_NAME  = "wysiwyg-text-align-center",
       REG_EXP     = /wysiwyg-text-align-[a-z]+/g;
