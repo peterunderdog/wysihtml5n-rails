@@ -7638,6 +7638,22 @@ wysihtml5.Commands = Base.extend(
 })(wysihtml5);(function(wysihtml5) {
   var undef;
   
+  wysihtml5.commands.symbol = {
+    exec: function(composer, command) {
+      return composer.commands.exec("insertHTML", "&#x3a3;");
+    },
+
+    state: function(composer, command, color) {
+      return false;
+    },
+
+    value: function() {
+      return undef;
+    }
+  };
+})(wysihtml5);(function(wysihtml5) {
+  var undef;
+  
   wysihtml5.commands.superscript = {
     exec: function(composer, command) {
       return wysihtml5.commands.formatInline.exec(composer, command, "sup");

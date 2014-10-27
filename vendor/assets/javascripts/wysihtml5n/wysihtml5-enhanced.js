@@ -636,6 +636,7 @@
         ul:           'icon-list-ul',
         superscript:  'icon-superscript',
         subscript:    'icon-subscript',
+        symbol:       "icon-symbol", 
         insertLink:   'icon-link',
         insertImage:  'icon-picture',
       },
@@ -646,6 +647,7 @@
         ul:           'fa fa-list-ul',
         superscript:  'fa fa-superscript',
         subscript:    'fa fa-subscript',
+        symbol:       'fa fa-symbol',
         insertLink:   'fa fa-link',
         insertImage:  'fa fa-image',
       }
@@ -665,11 +667,12 @@
       ul:           '<li data-wysihtml5-command="insertUnorderedList" title="Insert an unordered list" class="command btn"><i class="' + toolbar_icon['ul'] + '"></i></li>',
       superscript:  '<li data-wysihtml5-command="superscript" title="Insert superscript or exponent" class="command btn"><i class="' + toolbar_icon['superscript'] + '"></i></li>',
       subscript:    '<li data-wysihtml5-command="subscript" title="Insert subscript" class="command btn"><i class="' + toolbar_icon['subscript'] + '"></i></li>',
+      symbol:       '<li data-wysihtml5-command="symbol" title="Insert symbol" class="command btn"><i class="' + toolbar_icon['symbol'] + '"></i></li>',
       insertLink:   '<li data-wysihtml5-command="createLink" title="Insert a link" class="command btn"><i class="' + toolbar_icon['insertLink'] + '"></i></li>',
       insertImage:  '<li data-wysihtml5-command="insertImage" title="Insert an image" class="command btn"><i class="' + toolbar_icon['insertImage'] + '"></i></li>',
       changeView:   '<li data-wysihtml5-action="change_view" title="Show HTML" class="action btn">&lt;/&gt;</li>',
       modals: {
-        insertLink:'<div class="modal" data-wysihtml5-dialog="createLink" style="display: none;">' +
+        insertLink:'<div class="modal" data-wysihtml5-dialog="createLink">' +
           '<div class="modal-header">' +
           '<button type="button" class="close" data-wysihtml5-dialog-action="cancel" data-dismiss="modal">×</button>' +
           '<h3>Insert Link</h3>' +
@@ -682,7 +685,7 @@
           '<a class="btn" data-wysihtml5-dialog-action="cancel" data-dismiss="modal">Cancel</a>' +
           '</div>' +
           '</div>',
-        insertImage:'<div class="modal" data-wysihtml5-dialog="insertImage" style="display: none;">' +
+        insertImage:'<div class="modal" data-wysihtml5-dialog="insertImage">' +
           '<div class="modal-header">' +
           '<button type="button" class="close" data-wysihtml5-dialog-action="cancel" data-dismiss="modal">×</button>' +
           '<h3>Insert Image</h3>' +
@@ -797,7 +800,7 @@
 
   $.fn.wysiHTML5N.defaults = {
     toolbar: [
-      'h1', 'h2', 'h3', 'p', 'bold', 'italic', 'ul', 'ol', 'superscript', 'subscript', 'insertLink', 'insertImage', 'changeView'
+      'h1', 'h2', 'h3', 'p', 'bold', 'italic', 'ul', 'ol', 'superscript', 'subscript', 'symbol', 'insertLink', 'insertImage', 'changeView'
     ],
     icon_style: 'font_awesome_3',
     stylesheets: [],
