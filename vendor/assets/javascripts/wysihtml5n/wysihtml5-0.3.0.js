@@ -7638,9 +7638,24 @@ wysihtml5.Commands = Base.extend(
 })(wysihtml5);(function(wysihtml5) {
   var undef;
   
-  wysihtml5.commands.symbol = {
-    exec: function(composer, command) {
-      return composer.commands.exec("insertHTML", "&#x3a3;");
+  wysihtml5.commands.insertSymbol = {
+    exec: function(composer, comminand, value) {
+    },
+
+    state: function(composer, command, color) {
+      return false;
+    },
+
+    value: function() {
+      return undef;
+    }
+  };
+})(wysihtml5);(function(wysihtml5) {
+  var undef;
+  
+  wysihtml5.commands.insertSymbolEntity = {
+    exec: function(composer, command, value) {
+      return composer.commands.exec("insertHTML", value);
     },
 
     state: function(composer, command, color) {
@@ -8997,7 +9012,8 @@ wysihtml5.views.Textarea = wysihtml5.views.View.extend(
         this.interval = setInterval(function() { that._interpolate(true); }, 500);
       }
       dom.addClass(this.link, CLASS_NAME_OPENED);
-      this.container.style.display = "";
+      this.container.style.display = "block";
+      this.container.style.position = "relative";
       this.fire("show");
       if (firstField && !elementToChange) {
         try {

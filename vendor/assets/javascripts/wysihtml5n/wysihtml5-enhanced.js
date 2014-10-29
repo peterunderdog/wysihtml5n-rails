@@ -124,9 +124,7 @@
       "bgsound": {
         "remove": 1
       },
-      "sup": {
-        "rename_tag": "span"
-      },
+      "sup": {},
       "address": {
         "rename_tag": "div"
       },
@@ -442,9 +440,7 @@
           "align": "align_text"
         }
       },
-      "sub": {
-        "rename_tag": "span"
-      },
+      "sub": {},
       "comment": {
         "remove": 1
       },
@@ -619,6 +615,28 @@
     $img: null
   }
 
+  var sym = {math1: ['forall','part','exist','empty','nabla','isin','notin','ni','prod','sum','minus','lowast',
+      'radic','infin','ang','and','or','cap','cup','int'], 
+      math2: ['there4','sim','cong','asymp','ne','equiv',
+      'le','ge','sub','sup','nsub','sube','supe','oplus','otimes','perp','sdot'],
+    ucgreek: ['Alpha', 'Beta', 'Gamma', 'Delta', 'Epsilon', 'Zeta', 'Eta', 'Theta', 'Iota', 'Kappa', 'Lambda', 
+              'Mu', 'Nu', 'Xi', 'Omicron', 'Pi', 'Rho', 'Sigma', 'Tau', 'Upsilon', 'Phi', 'Chi', 'Psi', 'Omega'],
+    lcgreek: ['alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 'eta', 'theta', 'iota', 'kappa', 'lambda', 
+              'mu', 'nu', 'xi', 'omicron', 'pi', 'rho', 'sigmaf', 'sigma', 'sigma', 'tau', 'upsilon', 'phi', 'chi', 'psi', 'omega']};
+
+  var symbolBtns = '';
+  for (var i in sym)
+  {
+    symbolBtns += '<ul class="btn-group">';
+    for (var j in sym[i])
+    {
+    symbolBtns += '<li data-wysihtml5-command="insertSymbolEntity" data-wysihtml5-command-value="&' + 
+      sym[i][j] + ';" title="&' + 
+      sym[i][j] + ';" class="command btn" href="javascript:;" unselectable="on">&' + sym[i][j] + ';</li>'
+    }
+    symbolBtns += '</ul>';
+  }
+
   /**
    * Bootstrap and Drag & Drop enabled wysihtml editor
    * @param textarea - textarea DOM element to turn into WYSIWYG editor
@@ -636,7 +654,7 @@
         ul:           'icon-list-ul',
         superscript:  'icon-superscript',
         subscript:    'icon-subscript',
-        symbol:       "icon-symbol", 
+        insertSymbol: 'icon-symbol', 
         insertLink:   'icon-link',
         insertImage:  'icon-picture',
       },
@@ -647,7 +665,7 @@
         ul:           'fa fa-list-ul',
         superscript:  'fa fa-superscript',
         subscript:    'fa fa-subscript',
-        symbol:       'fa fa-symbol',
+        insertSymbol: 'fa fa-symbol',
         insertLink:   'fa fa-link',
         insertImage:  'fa fa-image',
       }
@@ -667,7 +685,7 @@
       ul:           '<li data-wysihtml5-command="insertUnorderedList" title="Insert an unordered list" class="command btn"><i class="' + toolbar_icon['ul'] + '"></i></li>',
       superscript:  '<li data-wysihtml5-command="superscript" title="Insert superscript or exponent" class="command btn"><i class="' + toolbar_icon['superscript'] + '"></i></li>',
       subscript:    '<li data-wysihtml5-command="subscript" title="Insert subscript" class="command btn"><i class="' + toolbar_icon['subscript'] + '"></i></li>',
-      symbol:       '<li data-wysihtml5-command="symbol" title="Insert symbol" class="command btn"><i class="' + toolbar_icon['symbol'] + '"></i></li>',
+      insertSymbol:       '<li data-wysihtml5-command="insertSymbol" title="Insert symbol" class="command btn">&Sigma;</li>',
       insertLink:   '<li data-wysihtml5-command="createLink" title="Insert a link" class="command btn"><i class="' + toolbar_icon['insertLink'] + '"></i></li>',
       insertImage:  '<li data-wysihtml5-command="insertImage" title="Insert an image" class="command btn"><i class="' + toolbar_icon['insertImage'] + '"></i></li>',
       changeView:   '<li data-wysihtml5-action="change_view" title="Show HTML" class="action btn">&lt;/&gt;</li>',
@@ -675,14 +693,25 @@
         insertLink:'<div class="modal" data-wysihtml5-dialog="createLink">' +
           '<div class="modal-header">' +
           '<button type="button" class="close" data-wysihtml5-dialog-action="cancel" data-dismiss="modal">×</button>' +
-          '<h3>Insert Link</h3>' +
           '</div>' +
           '<div class="modal-body">' +
-          '<label>Link: <input data-wysihtml5-dialog-field="href" type="url" class="input-xlarge" placeholder="http://"></label>' +
+          '<label>Insert Link: <input data-wysihtml5-dialog-field="href" type="url" class="input-xlarge" placeholder="http://"></label>' +
           '</div>' +
           '<div class="modal-footer">' +
           '<a class="btn btn-primary" data-wysihtml5-dialog-action="save">OK</a>' +
           '<a class="btn" data-wysihtml5-dialog-action="cancel" data-dismiss="modal">Cancel</a>' +
+          '</div>' +
+          '</div>',
+        insertSymbol:'<div class="modal" data-wysihtml5-dialog="insertSymbol">' +
+          '<div class="modal-header">' +
+          '<button type="button" class="close" data-wysihtml5-dialog-action="cancel" data-dismiss="modal">×</button>' +
+          '<h4>Insert Symbol</h4>' +
+          '</div>' +
+          '<div class="modal-body">' +
+          symbolBtns + 
+          '</div>' +
+          '<div class="modal-footer">' +
+          '<a class="btn btn-primary" data-wysihtml5-dialog-action="save">OK</a>' +
           '</div>' +
           '</div>',
         insertImage:'<div class="modal" data-wysihtml5-dialog="insertImage">' +
@@ -800,7 +829,7 @@
 
   $.fn.wysiHTML5N.defaults = {
     toolbar: [
-      'h1', 'h2', 'h3', 'p', 'bold', 'italic', 'ul', 'ol', 'superscript', 'subscript', 'symbol', 'insertLink', 'insertImage', 'changeView'
+      'h1', 'h2', 'h3', 'p', 'bold', 'italic', 'ul', 'ol', 'superscript', 'subscript', 'insertSymbol', 'insertLink', 'insertImage', 'changeView'
     ],
     icon_style: 'font_awesome_3',
     stylesheets: [],
