@@ -698,20 +698,17 @@
           '<label>Insert Link: <input data-wysihtml5-dialog-field="href" type="url" class="input-xlarge" placeholder="http://"></label>' +
           '</div>' +
           '<div class="modal-footer">' +
-          '<a class="btn btn-primary" data-wysihtml5-dialog-action="save">OK</a>' +
-          '<a class="btn" data-wysihtml5-dialog-action="cancel" data-dismiss="modal">Cancel</a>' +
+          '<a class="btn-sm btn-primary" data-wysihtml5-dialog-action="save">OK</a>' +
+          '<a class="btn-sm" data-wysihtml5-dialog-action="cancel" data-dismiss="modal">Cancel</a>' +
           '</div>' +
           '</div>',
         insertSymbol:'<div class="modal" data-wysihtml5-dialog="insertSymbol">' +
-          '<div class="modal-header">' +
-          '<button type="button" class="close" data-wysihtml5-dialog-action="cancel" data-dismiss="modal">×</button>' +
-          '<h4>Insert Symbol</h4>' +
-          '</div>' +
           '<div class="modal-body">' +
+          '<b>Insert symbol:<br/>' + 
           symbolBtns + 
           '</div>' +
           '<div class="modal-footer">' +
-          '<a class="btn btn-primary" data-wysihtml5-dialog-action="save">OK</a>' +
+          '<a class="btn-sm btn-primary" data-wysihtml5-dialog-action="save">OK</a>' +
           '</div>' +
           '</div>',
         insertImage:'<div class="modal" data-wysihtml5-dialog="insertImage">' +
