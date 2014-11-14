@@ -678,6 +678,7 @@
       h1:           '<li data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1" title="Insert headline 1" class="command btn">H1</li>',
       h2:           '<li data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2" title="Insert headline 2" class="command btn">H2</li>',
       h3:           '<li data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h3" title="Insert headline 3" class="command btn">H3</li>',
+      h:           '<li data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h3" title="Insert heading" class="command btn">H</li>',
       p:            '<li data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="p" title="Insert paragraph" class="command btn">P</li>',
       bold:         '<li data-wysihtml5-command="bold" title="Make text bold (CTRL + B)" class="command btn"><i class="' + toolbar_icon['bold'] + '"></i></li>',
       italic:       '<li data-wysihtml5-command="italic" title="Make text italic (CTRL + I)" class="command btn"><i class="' + toolbar_icon['italic'] + '"></i></li>',
