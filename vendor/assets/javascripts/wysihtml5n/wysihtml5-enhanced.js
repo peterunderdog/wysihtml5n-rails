@@ -615,7 +615,7 @@
     $img: null
   }
 
-  var sym = {punc: ['ndash', 'mdash', 'dagger', 'Dagger', 'bull', 'hellip'],
+  var sym = {punc: ['ndash', 'mdash', 'dagger', 'Dagger', 'bull', 'hellip', 'deg'],
     math1: ['forall','part','exist','empty','nabla','isin','notin','ni','prod','sum','minus','lowast',
       'radic','infin','ang','and','or','cap','cup','int'], 
       math2: ['there4','sim','cong','asymp','ne','equiv',
