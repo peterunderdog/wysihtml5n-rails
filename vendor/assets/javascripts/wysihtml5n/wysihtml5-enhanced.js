@@ -618,7 +618,7 @@
   var sym = {math1: ['forall','part','exist','empty','nabla','isin','notin','ni','prod','sum','minus','lowast',
       'radic','infin','ang','and','or','cap','cup','int'], 
       math2: ['there4','sim','cong','asymp','ne','equiv',
-      'le','ge','sub','sup','nsub','sube','supe','oplus','otimes','perp','sdot'],
+      'le','ge','sub','sup','nsub','sube','supe','oplus','otimes','odot','perp','sdot'],
     ucgreek: ['Alpha', 'Beta', 'Gamma', 'Delta', 'Epsilon', 'Zeta', 'Eta', 'Theta', 'Iota', 'Kappa', 'Lambda', 
               'Mu', 'Nu', 'Xi', 'Omicron', 'Pi', 'Rho', 'Sigma', 'Tau', 'Upsilon', 'Phi', 'Chi', 'Psi', 'Omega'],
     lcgreek: ['alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 'eta', 'theta', 'iota', 'kappa', 'lambda', 
